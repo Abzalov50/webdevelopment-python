@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Généralités sur la programmation web en Python &#8212; Développement Web avec Python</title>
+    <title>Introduction à PostgreSQL &#8212; Développement Web avec Python</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction au développement front-end avec HTML &amp; CSS" href="html-css.html" />
+    <link rel="next" title="&lt;no title&gt;" href="projet.html" />
+    <link rel="prev" title="Rendre le Web dynamique grâce au développement côté serveur avec Django" href="intro-django.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -106,13 +107,13 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="generalites.html">
                     Généralités sur la programmation web en Python
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="html-css.html">
    Introduction au développement front-end avec HTML &amp; CSS
@@ -123,14 +124,9 @@ const thebe_selector_output = ".output, .cell_output"
    Rendre le Web dynamique grâce au développement côté serveur avec Django
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="postgresql.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Introduction à PostgreSQL
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="projet.html">
-   Projet : Application Web d’ajout d’avis pour les films
   </a>
  </li>
 </ul>
@@ -223,7 +219,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgeneralites.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpostgresql.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -251,7 +247,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/generalites.md"
+        <a href="_sources/postgresql.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -288,90 +284,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#permettez-moi-de-vous-introduire-au-web">
-   Permettez-moi de vous introduire au Web
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mais-quelle-est-la-difference-entre-internet-et-web">
-   Mais, quelle est la différence entre Internet et Web ?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#revenons-plus-en-detail-sur-l-architecture-client-serveur">
-   Revenons plus en détail sur l’architecture Client/Serveur
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#les-sockets-python">
-   Les sockets Python
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Généralités sur la programmation web en Python</h1>
+                <h1>Introduction à PostgreSQL</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#permettez-moi-de-vous-introduire-au-web">
-   Permettez-moi de vous introduire au Web
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mais-quelle-est-la-difference-entre-internet-et-web">
-   Mais, quelle est la différence entre Internet et Web ?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#revenons-plus-en-detail-sur-l-architecture-client-serveur">
-   Revenons plus en détail sur l’architecture Client/Serveur
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#les-sockets-python">
-   Les sockets Python
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -379,40 +308,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="generalites-sur-la-programmation-web-en-python">
-<h1>Généralités sur la programmation web en Python<a class="headerlink" href="#generalites-sur-la-programmation-web-en-python" title="Permalink to this headline">#</a></h1>
-<section id="permettez-moi-de-vous-introduire-au-web">
-<h2>Permettez-moi de vous introduire au Web<a class="headerlink" href="#permettez-moi-de-vous-introduire-au-web" title="Permalink to this headline">#</a></h2>
-<p>Le <strong>Web</strong> (ou <strong>World-Wide Web</strong> ou <strong>WWW</strong> ou <strong>W3</strong>) est un système né vers 1990. Il a été développé par Tim Berners-Lee, initialement pour <em>faciliter la collaboration entre les membres de la communauté de Physique des Hautes Energies</em>. Il devait permettre un échange efficace d’information. La même information (en forme et fond) devait être accessible par tous les membres utilisant différents appareils.</p>
-<p>Tim développa 3 technologies afin de supporter son concept de Web :</p>
-<ul class="simple">
-<li><p><strong>HTML</strong> (HyperText Markup Language): Langage de formatage de texte pour le Web.</p></li>
-<li><p><strong>URL</strong> (Uniform Resource Identifier): Adresse unique identifiant chaque ressource sur le Web. L’URI est communément appelé URL, même si on pourrait faire une nuance entre les deux.</p></li>
-<li><p><strong>HTTP</strong> (HyperText Transfer Protocol): Protocole d’échange de documents sur le Web.</p></li>
-</ul>
-<p>Le concept était tellement général qu’il a pu être étendu à travers Internet. Aujourd’hui, tout le monde utilise le Web. Tous les sites internet sont accessibles via le Web. <br>
-Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un site web, par exemple), il faut que vous ayez accès à une architecture</em> <em><strong>client-serveur</strong></em> :</p>
-<blockquote>
-<div><p>Le client reçoit votre requête, la transmet au serveur. Le serveur traite cette requête, et envoie une réponse au client, à laquelle vous avez directement accès. Le client avec lequel vous interagirez le plus souvent est le navigateur internet (tel que Google Chrome, Mozilla Firefox, Safari, Microsoft Edge,…). Par conséquent, vous avez accès au Web à partir de tout appareil qui dispose d’un navigateur internet (PC, Mac, Smartphone, Tablette,…).</p>
-</div></blockquote>
-<p>En 1999, le concept de <strong>Web 2.0</strong> a été introduit par Darcy DiNucci, et rendu populaire par Tim O’Reilly et Dale Doughtery. *<strong>La principale fonctionnalité du Web 2.0 est la possibilité offerte à l’utilisateur de contribuer en modifiant ou en ajoutant du contenu au site Web existant, plutôt que de juste consulter</strong>. (Facebook est un exemple d’application de cette fonctionnalité). Ici, on passe de la notion de “<strong>site Web</strong>” à la notion d’<strong>application Web</strong>. Application parce que l’utilisateur peut contribuer au développement, à travers l’ajout de contenu (réseaux sociaux, wikis, forums,…) et à travers les infos générées par ma simple navigation (e-commerce).</p>
-<p>Une <em><strong>application mobile</strong></em> est un logiciel développé pour un appareil électronique mobile, tel que le PDA, le smartphone, la tablette,… L’application mobile est donc intimement liée au système d’exploitation du mobile (Android, iOS, Windows Phone, Blackberry OS, Chrome OS, etc.). On dit “application Android”, “application iOS”, etc.</p>
-<p>Le Web est accessible via les appareils mobiles ; il suffit d’avoir une application client, telle que Firefox. C’est cette possibilité d’accéder au Web à partir de tout type d’appareils électroniques (mobile et PC), qui lui confère toute sa puissance.</p>
-<blockquote>
-<div><p>Avec le Web 2.0, les applications Web sont tout aussi (voire plus) puissantes que les applications Mobile.</p>
-</div></blockquote>
-</section>
-<section id="mais-quelle-est-la-difference-entre-internet-et-web">
-<h2>Mais, quelle est la différence entre Internet et Web ?<a class="headerlink" href="#mais-quelle-est-la-difference-entre-internet-et-web" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="revenons-plus-en-detail-sur-l-architecture-client-serveur">
-<h2>Revenons plus en détail sur l’architecture Client/Serveur<a class="headerlink" href="#revenons-plus-en-detail-sur-l-architecture-client-serveur" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="les-sockets-python">
-<h2>Les sockets Python<a class="headerlink" href="#les-sockets-python" title="Permalink to this headline">#</a></h2>
-</section>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-a-postgresql">
+<h1>Introduction à PostgreSQL<a class="headerlink" href="#introduction-a-postgresql" title="Permalink to this headline">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -442,10 +339,17 @@ Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un si
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="html-css.html" title="next page">
+    <a class='left-prev' id="prev-link" href="intro-django.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Rendre le Web dynamique grâce au développement côté serveur avec Django</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="projet.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction au développement front-end avec HTML &amp; CSS</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
