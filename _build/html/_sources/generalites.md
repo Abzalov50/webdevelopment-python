@@ -35,8 +35,7 @@ L'architecture client-serveur est une approche (parmi tant d'autres) de communic
 
 La {numref}`Figure %s <arch-client-serveur>` présente un modèle d'architecture client-serveur ([Source](https://info.blaisepascal.fr/nsi-sockets-python)). Cette figure montre 3 clients A, B et C en communicaton (via des requêtes et réponses) avec un (le même) serveur. Le serveur est représenté comme une unité centrale, car c'est la partie calcul du serveur qui nous intéresse plutôt que l'affichage.
 
-```{figure} /_static/arch-client-serveur.png
-:scale: 50%
+```{figure} /_static/arch-clientserveur.png
 :name: arch-client-serveur
 
 Un modèle d'architecture client-serveur.
@@ -52,7 +51,6 @@ Pour que le serveur reconnaisse précisément que tel client a envoyé telle req
 Toutefois, cette seule information n'est pas suffisante pour permettre une communication cohérente. Pourquoi ? Vous souvenez qu'on a mis ***clients*** au pluriel ? On veut dire que sur une même machine peut résider plusieurs clients. N'avez-vous pas sur votre PC plusieurs navigateurs (Google Chome, Mozilla Firefox, Microsoft Edge, Apple Safari, ...), une application de messagerie (telle que Outlook), des applications de discussion instantanée (telle que Skype ou Signal) ? Toutes ces applications sont des clients. Aussi, l'adresse IP ne suffit pas pour identifier une application spécifique. Pour ce faire, on a recours à la notion de **numéro de port** (ou simplement **port**). L'application serveur à un port sur la machine-serveur. Chaque application-client a un port sur la machine-client. Le couple `(adresse, port)` représente un **socket** (Voir {numref}`Figure %s <fig-socket>`).
 
 ```{figure} /_static/fig-socket.png
-:scale: 50%
 :name: fig-socket
 
 Un modèle de communication client-serveur via les sockets.
@@ -69,6 +67,79 @@ Afin d'uniformiser la communication via internet, certains protocoles ont été 
 
 ## Les sockets Python
 
+Un socket est un point de terminaison d'un canal de communication bidirectionnel entre le serveur et le client. Dans cette section, nous apprenons à développer une petite application client-serveur, dont les différentes étapes sont les suivantes :
+
+1. Le serveur s'exécute et attend une connexion.
+2. Le client initie la communication, et envoie une requête.
+3. Le serveur répond précisément aux requêtes reçues.
+4. Le client termine si l'utilisateur entre "Au revoir" comme requête. Le serveur s'arrête également (facultatif).
+
+### Le programme serveur
+```{code-cell} ipython3
+import socket
+
+def server_app():
+    host = socket.gethostname()  # Obtenir le nom d'hôte de la machine serveur
+    port = 8000  # Brancher le serveur à un port supérieur à 1024
+    
+    serv_socket = socket.socket()  # Créer un objet `socket'
+    serv_socket.bind( (host, port) )  # Associer l'objet au socket
+    
+    serv_socket.listen(2)  # Spécifier le nombre de requêtes simultanées que le serveur peut traiter
+    conn, address = serv_socket.accept()  # Le serveur est prêt à accepter une connexion
+    print('#### Aide :')
+    print('Pour arrêter le serveur, appuyer la touche Entrée sans saisir de texte, ou entrer "Au revoir" sans les guillemets.')
+    print('####\n\n')
+    print('Connexion depuis l\'adresse : {0}'.format(address))
+    
+    # Lancer la boucle de traitement des requêtes
+    while True:
+        req = conn.recv(1024).decode()  # Requête limitée à 1024 octets
+        
+        if not data:
+            # Si aucune donnée, arrêter le serveur
+            break
+        print("Données reçues de l'utilisateur connecté : {0}".format(data))
+        data = input(' >> ')
+        conn.send(data.encode()) # Envoyer une réponse au client
+    
+    conn.close()  # Fermer la connexion à l'arrêt de la boucle de traitement.
+
+"""
+if __name__ == '__main__':
+    server_app()
+"""
+```
+### Le programme client
+```{code-cell} ipython3
+import socket
+
+
+def client_app():
+    host = socket.gethostname()  # Puisque le serveur et le client logent sur la même machine
+    port = 5000  # Port auquel est connecté le serveur
+
+    client_socket = socket.socket()  # Création du socket client
+    client_socket.connect((host, port))  # connexion au serveur
+
+    message = input(" -> ")
+
+    while message.lower().strip() != 'au revoir':
+        client_socket.send(message.encode())  # send message
+        data = client_socket.recv(1024).decode()  # receive response
+
+        print('Données envoyées par le serveur {0}: '.format(data)) 
+
+        message = input(" -> ")
+
+    client_socket.close()
+
+"""
+if __name__ == '__main__':
+    client_app()
+"""
+
+```
 
 ```{bibliography}
 ```

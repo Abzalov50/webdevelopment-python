@@ -329,6 +329,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#les-sockets-python">
    Les sockets Python
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-programme-serveur">
+     Le programme serveur
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-programme-client">
+     Le programme client
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -368,6 +380,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#les-sockets-python">
    Les sockets Python
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-programme-serveur">
+     Le programme serveur
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-programme-client">
+     Le programme client
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -413,7 +437,7 @@ Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un si
 <p>L’architecture client-serveur est une approche (parmi tant d’autres) de communication entre deux applications logicielles qui résident généralement (mais pas toujours) sur des machines physiquement distinctes.</p>
 <p>La <a class="reference internal" href="#arch-client-serveur"><span class="std std-numref">Figure 1</span></a> présente un modèle d’architecture client-serveur (<a class="reference external" href="https://info.blaisepascal.fr/nsi-sockets-python">Source</a>). Cette figure montre 3 clients A, B et C en communicaton (via des requêtes et réponses) avec un (le même) serveur. Le serveur est représenté comme une unité centrale, car c’est la partie calcul du serveur qui nous intéresse plutôt que l’affichage.</p>
 <figure class="align-default" id="arch-client-serveur">
-<a class="reference internal image-reference" href="_static/arch-client-serveur.png"><img alt="_static/arch-client-serveur.png" src="_static/arch-client-serveur.png" /></a>
+<img alt="_images/arch-clientserveur.png" src="_images/arch-clientserveur.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Un modèle d’architecture client-serveur.</span><a class="headerlink" href="#arch-client-serveur" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -426,7 +450,7 @@ Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un si
 <p>Pour que le serveur reconnaisse précisément que tel client a envoyé telle requête, il lui faut avoir une information unique au client. De même pour que le client sache précisément quel serveur lui a envoyé une réponse donnée, il lui faut avoir une information unique au serveur. Cette information est appelée une <strong>adresse IP</strong> (ou <strong>nom d’hôte</strong> ou <strong>host name</strong>, en anglais), qui identifie une machine sur un réseau, qu’il soit local ou internet. Toute machine connectée à un réseau a donc un nom unique. Par exemple, aujourd’hui 01 octobre 2022, le serveur servant la page <code class="docutils literal notranslate"><span class="pre">google.ci</span></code> (son nom d’hôte) a comme adresse IP : <code class="docutils literal notranslate"><span class="pre">142.250.201.163</span></code>. Vous conviendrez avec moi que le nom d’hôte est plus facile à retenir que l’adresse IP :smiley: .</p>
 <p>Toutefois, cette seule information n’est pas suffisante pour permettre une communication cohérente. Pourquoi ? Vous souvenez qu’on a mis <em><strong>clients</strong></em> au pluriel ? On veut dire que sur une même machine peut résider plusieurs clients. N’avez-vous pas sur votre PC plusieurs navigateurs (Google Chome, Mozilla Firefox, Microsoft Edge, Apple Safari, …), une application de messagerie (telle que Outlook), des applications de discussion instantanée (telle que Skype ou Signal) ? Toutes ces applications sont des clients. Aussi, l’adresse IP ne suffit pas pour identifier une application spécifique. Pour ce faire, on a recours à la notion de <strong>numéro de port</strong> (ou simplement <strong>port</strong>). L’application serveur à un port sur la machine-serveur. Chaque application-client a un port sur la machine-client. Le couple <code class="docutils literal notranslate"><span class="pre">(adresse,</span> <span class="pre">port)</span></code> représente un <strong>socket</strong> (Voir <a class="reference internal" href="#fig-socket"><span class="std std-numref">Figure 2</span></a>).</p>
 <figure class="align-default" id="fig-socket">
-<a class="reference internal image-reference" href="_images/fig-socket.png"><img alt="_images/fig-socket.png" src="_images/fig-socket.png" style="width: 180.5px; height: 145.5px;" /></a>
+<img alt="_images/fig-socket.png" src="_images/fig-socket.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">Un modèle de communication client-serveur via les sockets.</span><a class="headerlink" href="#fig-socket" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -441,6 +465,18 @@ Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un si
 </section>
 <section id="les-sockets-python">
 <span id="socks"></span><h2>Les sockets Python<a class="headerlink" href="#les-sockets-python" title="Permalink to this headline">#</a></h2>
+<p>Un socket est un point de terminaison d’un canal de communication bidirectionnel entre le serveur et le client. Dans cette section, nous apprenons à développer une petite application client-serveur, dont les différentes étapes sont les suivantes :</p>
+<ol class="simple">
+<li><p>Le serveur s’exécute et attend une connexion.</p></li>
+<li><p>Le client initie la communication, et envoie une requête.</p></li>
+<li><p>Le serveur répond précisément aux requêtes reçues.</p></li>
+<li><p>Le client termine si l’utilisateur entre “Au revoir” comme requête. Le serveur s’arrête également (facultatif).</p></li>
+</ol>
+<section id="le-programme-serveur">
+<h3>Le programme serveur<a class="headerlink" href="#le-programme-serveur" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="le-programme-client">
+<h3>Le programme client<a class="headerlink" href="#le-programme-client" title="Permalink to this headline">#</a></h3>
 <div class="docutils container" id="id2">
 <dl class="citation">
 <dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id1">SL17</a></span></dt>
@@ -448,6 +484,7 @@ Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un si
 </dd>
 </dl>
 </div>
+</section>
 </section>
 <div class="toctree-wrapper compound">
 </div>
