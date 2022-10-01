@@ -75,6 +75,7 @@ Un socket est un point de terminaison d'un canal de communication bidirectionnel
 4. Le client termine si l'utilisateur entre "Au revoir" comme requête. Le serveur s'arrête également (facultatif).
 
 ### Le programme serveur
+
 ```{code-cell} ipython3
 import socket
 
@@ -110,7 +111,9 @@ if __name__ == '__main__':
     server_app()
 """
 ```
+
 ### Le programme client
+
 ```{code-cell} ipython3
 import socket
 
