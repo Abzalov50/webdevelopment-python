@@ -23,6 +23,52 @@ Le Web est accessible via les appareils mobiles ; il suffit d'avoir une applicat
 
 ## Mais, quelle est la différence entre Internet et Web ?
 
+**Internet** est un ensemble d'ordinateurs et d'autres appareils électroniques interconnectés de diverses manières, notamment via les fils de cuivre, la fibre optique et les communications sans fil (WiFi).
+
+Internet est né à la fin des années 60, donc bien avant le Web. Il s'appelait d'abord **ARPANET**, c'est-à-dire ***réseau d'ARPA***. ARPA (Advanced Research Projects Agency, US) a développé Internet dans le but de fournir une *interconnexion sécurisé* à l'armée américaine, en cas de guerre nucléaire. Initialement développé pour un ensemble restreint d'équipements, Internet est aujourd'hui utlisé à travers le monde et connecte des millions de machines {cite}`scobey17`. Nous sommes tous connectés !
+
+Le Web est certainement le système de collaboraton le plus connu et le plus utilisé à travers Internet, sinon les échanges via Internet se font par principe via les [**sockets**](socks).
+
 ## Revenons plus en détail sur l'architecture Client/Serveur
 
+L'architecture client-serveur est une approche (parmi tant d'autres) de communication entre deux applications logicielles qui résident généralement (mais pas toujours) sur des machines physiquement distinctes.
+
+La {numref}`Figure %s <arch-client-serveur>` présente un modèle d'architecture client-serveur ([Source](https://info.blaisepascal.fr/nsi-sockets-python)). Cette figure montre 3 clients A, B et C en communicaton (via des requêtes et réponses) avec un (le même) serveur. Le serveur est représenté comme une unité centrale, car c'est la partie calcul du serveur qui nous intéresse plutôt que l'affichage.
+
+```{figure} /_static/arch-client-serveur.png
+:scale: 50%
+:name: arch-client-serveur
+
+Un modèle d'architecture client-serveur.
+```
+
+En général, une infinité de clients peuvent potentiellement se connecter au même serveur, et le serveur doit, de façon constante et cohérente, répondre à chaque requête. Il faut donc 2 types d'application pour entretenir cette communication :
+
+- L'application côté serveur, ou simplement application "**serveur**" : qui attend (ou *écoute*) les requêtes client.
+- Les applications côté client, ou simplement applications "**clients**" : qui se connectent au serveur (le navigateur Web, Skype, WhatsApp, Outlook sont des exemples de clients). 
+
+Pour que le serveur reconnaisse précisément que tel client a envoyé telle requête, il lui faut avoir une information unique au client. De même pour que le client sache précisément quel serveur lui a envoyé une réponse donnée, il lui faut avoir une information unique au serveur. Cette information est appelée une **adresse IP** (ou **nom d'hôte** ou **host name**, en anglais), qui identifie une machine sur un réseau, qu'il soit local ou internet. Toute machine connectée à un réseau a donc un nom unique. Par exemple, aujourd'hui 01 octobre 2022, le serveur servant la page `google.ci` (son nom d'hôte) a comme adresse IP : `142.250.201.163`. Vous conviendrez avec moi que le nom d'hôte est plus facile à retenir que l'adresse IP :smiley: . 
+
+Toutefois, cette seule information n'est pas suffisante pour permettre une communication cohérente. Pourquoi ? Vous souvenez qu'on a mis ***clients*** au pluriel ? On veut dire que sur une même machine peut résider plusieurs clients. N'avez-vous pas sur votre PC plusieurs navigateurs (Google Chome, Mozilla Firefox, Microsoft Edge, Apple Safari, ...), une application de messagerie (telle que Outlook), des applications de discussion instantanée (telle que Skype ou Signal) ? Toutes ces applications sont des clients. Aussi, l'adresse IP ne suffit pas pour identifier une application spécifique. Pour ce faire, on a recours à la notion de **numéro de port** (ou simplement **port**). L'application serveur à un port sur la machine-serveur. Chaque application-client a un port sur la machine-client. Le couple `(adresse, port)` représente un **socket** (Voir {numref}`Figure %s <fig-socket>`).
+
+```{figure} /_static/fig-socket.png
+:scale: 50%
+:name: fig-socket
+
+Un modèle de communication client-serveur via les sockets.
+```
+
+Afin d'uniformiser la communication via internet, certains protocoles ont été développés, notamment les protocoles de la pile TCP/IP. Ces protocoles fixent des numéros de port pour certains types de services (qui peuvent eux-mêmes être réglementés par des protocoles). Par exemple :
+
+- Le port `80` est dédié au protocole HTTP (non sécurisé) et le port `443` est dédié au protocole HTTPS (la version sécurisée de HTTP).
+- Le port `23` est dédié au service telnet.
+- Le port `21` est dédié au protocole FTP d'échange de fichiers.
+- Le port `22` est dédié au service de connexion Shell sécurisée.
+
+(socks)=
+
 ## Les sockets Python
+
+
+```{bibliography}
+```

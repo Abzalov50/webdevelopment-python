@@ -1,0 +1,12 @@
+(undo-tree-save-format-version . 1)
+"00237bbc0af4ec397d2bb0387c5365402ac4ba97"
+[nil nil nil nil (25398 57401 540251 855000) 0 nil]
+([nil nil ((" My sample book" . -86) (undo-tree-id2 . -15) (undo-tree-id3 . -15) 101 (t 25398 51706 949940 587000)) nil (25398 57401 540250 636000) 0 nil])
+([nil nil ((86 . 93)) nil (25398 57401 540249 291000) 0 nil])
+([nil nil (("p" . -92) (undo-tree-id1 . -1) 93) nil (25398 57401 540248 602000) 0 nil])
+([nil nil ((86 . 87)) nil (25398 57401 540247 251000) 0 nil])
+([nil nil ((93 . 95)) nil (25398 57401 540246 675000) 0 nil])
+([nil nil ((95 . 116)) nil (25398 57401 540246 125000) 0 nil])
+([nil nil (("The Jupyter Book Community" . 125) (undo-tree-id0 . -6)) nil (25398 57401 540245 268000) 0 nil])
+([nil current ((125 . 144)) nil (25398 57401 540234 147000) 0 nil])
+nil

@@ -1,0 +1,43 @@
+(undo-tree-save-format-version . 1)
+"f05d40476c22d6370a84482bd8e0fc33baa494ea"
+[nil nil nil nil (25399 50491 161250 459000) 0 nil]
+([nil nil ((5512 . 5514) (t 25398 51706 949940 587000)) nil (25399 50491 161249 895000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 5683 . 5684) (nil fontified nil 5663 . 5684) (nil fontified nil 5654 . 5663) (nil fontified nil 5636 . 5654) (nil fontified nil 5632 . 5636) (nil fontified nil 5581 . 5632) (nil fontified nil 5575 . 5581) (nil fontified nil 5533 . 5575) (nil fontified nil 5528 . 5533) (nil fontified nil 5524 . 5528) (nil fontified nil 5520 . 5524) (nil fontified nil 5519 . 5520) (nil fontified nil 5514 . 5519) (5514 . 5684)) nil (25399 50491 161289 563000) 0 nil])
+([nil nil ((#("The Ruby Programming Language" 0 29 (fontified t)) . -5541) (undo-tree-id14 . -29) (undo-tree-id15 . -29) 5570) nil (25399 50593 920133 105000) 0 nil] [nil nil ((5570 . 5573)) ((#("
+  " 0 3 (fontified t)) . 5570) (undo-tree-id0 . -3) (undo-tree-id1 . -1)) (25399 50491 161245 848000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 5606 . 5607) (nil fontified nil 5541 . 5607) (5541 . 5607)) nil (25399 50593 920132 96000) 0 nil])
+nil
+([nil nil ((#("Flanagan, David and Matsumoto, Yukihiro" 0 39 (fontified t)) . -5625) (undo-tree-id12 . -39) (undo-tree-id13 . -39) 5664) nil (25399 50593 920131 599000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 5657 . 5658) (nil fontified nil 5625 . 5658) (5625 . 5658)) nil (25399 50593 920130 673000) 0 nil])
+([nil nil ((#("," 0 1 (fontified t)) . -5638) (undo-tree-id9 . -1) (undo-tree-id10 . -1) (undo-tree-id11 . -1) 5639) nil (25399 50593 920130 252000) 0 nil])
+([nil nil ((#("," 0 1 (fontified t)) . 5638) (#("D" 0 1 (fontified t)) . 5638) (#("h" 0 1 (fontified t)) . 5638) (#("P" 0 1 (fontified t)) . 5638) (#(" " 0 1 (fontified t)) . 5638)) nil (25399 50593 920128 876000) 0 nil])
+([nil nil ((5638 . 5642)) nil (25399 50593 920128 464000) 0 nil])
+([nil nil ((#("2008" 0 4 (fontified t)) . -5674) (undo-tree-id3 . -4) (undo-tree-id4 . -4) (undo-tree-id5 . -4) (undo-tree-id6 . -4) (undo-tree-id7 . -4) (undo-tree-id8 . -4) 5678) nil (25399 50593 920128 164000) 0 nil])
+([nil nil ((#("}" 0 1 (fontified t)) . 5674) (5675 . 5676) 5674) nil (25399 50593 920125 866000) 0 nil])
+([nil nil ((5674 . 5675) (#("5" 0 1 (fontified t)) . -5674) (undo-tree-id2 . -1) 5675) nil (25399 50593 920125 463000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . 5674) (5675 . 5676) 5674) nil (25399 50593 920118 608000) 0 nil])
+([nil nil ((#("," 0 1 (fontified t)) . 5675) (5676 . 5677) 5675) nil (25399 50593 920118 250000) 0 nil])
+([nil nil ((5676 . 5677)) nil (25399 50593 920117 852000) 0 nil])
+([nil nil ((5677 . 5678)) nil (25399 50594 611393 702000) 0 nil])
+([nil nil ((5678 . 5679)) nil (25399 50649 651362 890000) 0 nil] [nil nil ((nil rear-nonsticky nil 5680 . 5681) (nil fontified nil 5677 . 5681) (5677 . 5681) 5678) ((#("2008" 0 3 (fontified nil) 3 4 (fontified nil rear-nonsticky nil)) . 5677) (undo-tree-id19 . -4) (nil rear-nonsticky t 5680 . 5681)) (25399 50593 920178 235000) 0 nil])
+([nil nil ((#("O'Reilly Media" 0 14 (fontified t)) . -5695) (undo-tree-id35 . -14) (undo-tree-id36 . -14) (undo-tree-id37 . -14) (undo-tree-id38 . -14) 5709) nil (25399 50649 651362 259000) 0 nil])
+([nil nil ((#("7" 0 1 (fontified t)) . 5681) (5682 . 5683) 5681) ((#("}" 0 1 (fontified nil)) . 5682) (undo-tree-id16 . -1) (undo-tree-id17 . 1) (undo-tree-id18 . -1) (5681 . 5682)) (25399 50593 920113 396000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 5720 . 5721) (nil fontified nil 5695 . 5721) (5695 . 5721)) nil (25399 50649 651360 867000) 0 nil])
+nil
+([nil nil ((#("
+" 0 1 (fontified t rear-nonsticky t)) . -5720) (undo-tree-id33 . -1) (undo-tree-id34 . -1) 5721) nil (25399 50649 651360 483000) 0 nil])
+([nil nil ((#("ruby" 0 4 (fontified t face font-lock-constant-face)) . -5520) (undo-tree-id20 . -4) (undo-tree-id21 . -1) (undo-tree-id22 . -3) (undo-tree-id23 . -3) (undo-tree-id24 . -3) (undo-tree-id25 . -3) (undo-tree-id26 . -3) (undo-tree-id27 . -3) (undo-tree-id28 . -4) (undo-tree-id29 . -4) (undo-tree-id30 . -4) (undo-tree-id31 . -4) (undo-tree-id32 . -4) 5524) nil (25399 50649 651359 243000) 0 nil])
+([nil nil ((#("," 0 1 (fontified t)) . 5520) (5521 . 5522) 5520) nil (25399 50649 651348 306000) 0 nil])
+([nil nil ((5521 . 5522)) nil (25399 50649 651347 866000) 0 nil])
+([nil nil ((5522 . 5523)) nil (25399 50649 651347 615000) 0 nil])
+([nil nil ((5523 . 5524)) nil (25399 50649 651347 237000) 0 nil])
+([nil nil ((5524 . 5525)) nil (25399 50649 651346 450000) 0 nil])
+([nil nil ((5525 . 5526)) nil (25399 50649 651346 144000) 0 nil])
+([nil nil ((5526 . 5527)) nil (25399 50649 651345 757000) 0 nil])
+([nil nil ((5527 . 5528)) nil (25399 50649 651345 455000) 0 nil])
+([nil nil ((5528 . 5529)) nil (25399 50649 651345 190000) 0 nil])
+([nil nil ((#("&" 0 1 (fontified t)) . 5705) (5706 . 5707) 5705) nil (25399 50649 651344 682000) 0 nil])
+([nil nil ((#(" " 0 1 (fontified t)) . 5706)) nil (25399 50649 651343 963000) 0 nil])
+([nil nil ((5706 . 5708)) nil (25399 50649 651341 549000) 0 nil])
+([nil current ((5683 . 5684) (t 25399 50649 660974 119000)) nil (25399 55022 238432 230000) 0 nil])
+nil
