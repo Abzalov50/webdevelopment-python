@@ -524,6 +524,7 @@ Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un si
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
 
+
 <span class="k">def</span> <span class="nf">server_app</span><span class="p">():</span>
     <span class="n">host</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">()</span>  <span class="c1"># Obtenir le nom d&#39;hôte de la machine serveur</span>
     <span class="n">port</span> <span class="o">=</span> <span class="mi">8000</span>  <span class="c1"># Brancher le serveur à un port supérieur à 1024</span>
@@ -551,15 +552,9 @@ Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un si
     
     <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># Fermer la connexion à l&#39;arrêt de la boucle de traitement.</span>
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">if __name__ == &#39;__main__&#39;:</span>
-<span class="sd">    server_app()</span>
-<span class="sd">&quot;&quot;&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;\nif __name__ == &#39;__main__&#39;:\n    server_app()\n&quot;
+
+<span class="c1">#if __name__ == &#39;__main__&#39;:</span>
+<span class="c1">#    server_app()</span>
 </pre></div>
 </div>
 </div>
@@ -591,19 +586,33 @@ Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un si
 
     <span class="n">client_socket</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">if __name__ == &#39;__main__&#39;:</span>
-<span class="sd">    client_app()</span>
-<span class="sd">&quot;&quot;&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;\nif __name__ == &#39;__main__&#39;:\n    client_app()\n&quot;
+
+<span class="c1">#if __name__ == &#39;__main__&#39;:</span>
+<span class="c1">#    client_app()</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Pour tester notre mini-application client-serveur, il faut procéder comme suit :</p>
+<ol class="simple">
+<li><p>Enregistrer le code du programme client et celui du programme serveur dans des fichiers Python (d’extension <code class="docutils literal notranslate"><span class="pre">.py</span></code>). Par exemple :</p></li>
+</ol>
+<ul class="simple">
+<li><p>Fichier <code class="docutils literal notranslate"><span class="pre">server_app.py</span></code> pour le code du serveur.</p></li>
+<li><p>Fichier <code class="docutils literal notranslate"><span class="pre">client_app.py</span></code> pour le code du serveur.</p></li>
+</ul>
+<p>Dans les 2 cas, les deux dernières lignes de code doivent être <em>dé-commentées</em> (càd qu’il faut retirer le symbole <code class="docutils literal notranslate"><span class="pre">#</span></code> placé en début de ligne).</p>
+<ol class="simple">
+<li><p>Exécuter <strong>dans l’ordre</strong> les 2 programmes dans 2 invites de commande Windows (ou consoles Linux) différentes, en exécutant les commandes suivantes :</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">server_app.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">client_app.py</span></code></p></li>
+</ul>
+<p>Pour que ces commandes fonctionnent, il faut nécessairement que les consoles soient ouvertes dans les dossiers où se trouvent les fichiers <code class="docutils literal notranslate"><span class="pre">server_app.py</span></code> et <code class="docutils literal notranslate"><span class="pre">client_app.py</span></code>, ou se déplacer vers ces dossiers à l’aide de la commande <code class="docutils literal notranslate"><span class="pre">cd</span></code> (Voir comment utiliser cette commande <a class="reference external" href="https://www.youtube.com/watch?v=PbLqATBU4f0">ici</a>. Ce tutoriel peut être appliqué au cas de l’invite de commande Windows).</p>
+<ol class="simple">
+<li><p>Si les programmes s’exécutent correctement, le programme serveur doit être en attente d’une requête (message) de la part du client. Il faut donc écrire un message dans le programme client, et appuyer sur la touche <code class="docutils literal notranslate"><span class="pre">Entrée</span></code> du clavier pour l’envoyer. Ensuite, il faut basculer vers la console serveur pour voir la requête du client. Ensuite, écrire une réponse dans le programme serveur, et appuyer sur la touche <code class="docutils literal notranslate"><span class="pre">Entrée</span></code> pour l’envoyer au client. Et ainsi de suite, jusqu’à ce que vous décidiez de fermer les consoles pour arrêter les programmes, ou que vous envoyiez <code class="docutils literal notranslate"><span class="pre">Au</span> <span class="pre">revoir</span></code> comme message au serveur.</p></li>
+</ol>
 <div class="docutils container" id="id2">
 <dl class="citation">
 <dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id1">SL17</a></span></dt>
