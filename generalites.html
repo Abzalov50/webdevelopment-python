@@ -184,6 +184,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/generalites.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -250,6 +279,23 @@ title="Open an issue"
   </button>
   <div class="menu-dropdown__content">
     <ul>
+      <li>
+        <a href="_sources/generalites.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
       <li>
         <a href="_sources/generalites.md"
    class="headerbtn"
@@ -404,7 +450,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="generalites-sur-la-programmation-web-en-python">
-<h1>Généralités sur la programmation web en Python<a class="headerlink" href="#generalites-sur-la-programmation-web-en-python" title="Permalink to this headline">#</a></h1>
+<span id="chap1"></span><h1>Généralités sur la programmation web en Python<a class="headerlink" href="#generalites-sur-la-programmation-web-en-python" title="Permalink to this headline">#</a></h1>
 <section id="permettez-moi-de-vous-introduire-au-web">
 <h2>Permettez-moi de vous introduire au Web<a class="headerlink" href="#permettez-moi-de-vous-introduire-au-web" title="Permalink to this headline">#</a></h2>
 <p>Le <strong>Web</strong> (ou <strong>World-Wide Web</strong> ou <strong>WWW</strong> ou <strong>W3</strong>) est un système né vers 1990. Il a été développé par Tim Berners-Lee, initialement pour <em>faciliter la collaboration entre les membres de la communauté de Physique des Hautes Energies</em>. Il devait permettre un échange efficace d’information. La même information (en forme et fond) devait être accessible par tous les membres utilisant différents appareils.</p>
@@ -474,9 +520,90 @@ Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un si
 </ol>
 <section id="le-programme-serveur">
 <h3>Le programme serveur<a class="headerlink" href="#le-programme-serveur" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
+
+<span class="k">def</span> <span class="nf">server_app</span><span class="p">():</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">()</span>  <span class="c1"># Obtenir le nom d&#39;hôte de la machine serveur</span>
+    <span class="n">port</span> <span class="o">=</span> <span class="mi">8000</span>  <span class="c1"># Brancher le serveur à un port supérieur à 1024</span>
+    
+    <span class="n">serv_socket</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">()</span>  <span class="c1"># Créer un objet `socket&#39;</span>
+    <span class="n">serv_socket</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span> <span class="p">)</span>  <span class="c1"># Associer l&#39;objet au socket</span>
+    
+    <span class="n">serv_socket</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Spécifier le nombre de requêtes simultanées que le serveur peut traiter</span>
+    <span class="n">conn</span><span class="p">,</span> <span class="n">address</span> <span class="o">=</span> <span class="n">serv_socket</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>  <span class="c1"># Le serveur est prêt à accepter une connexion</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;#### Aide :&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pour arrêter le serveur, appuyer la touche Entrée sans saisir de texte, ou entrer &quot;Au revoir&quot; sans les guillemets.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;####</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Connexion depuis l</span><span class="se">\&#39;</span><span class="s1">adresse : </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">address</span><span class="p">))</span>
+    
+    <span class="c1"># Lancer la boucle de traitement des requêtes</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">req</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>  <span class="c1"># Requête limitée à 1024 octets</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+            <span class="c1"># Si aucune donnée, arrêter le serveur</span>
+            <span class="k">break</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Données reçues de l&#39;utilisateur connecté : </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39; &gt;&gt; &#39;</span><span class="p">)</span>
+        <span class="n">conn</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span> <span class="c1"># Envoyer une réponse au client</span>
+    
+    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># Fermer la connexion à l&#39;arrêt de la boucle de traitement.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">if __name__ == &#39;__main__&#39;:</span>
+<span class="sd">    server_app()</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;\nif __name__ == &#39;__main__&#39;:\n    server_app()\n&quot;
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="le-programme-client">
 <h3>Le programme client<a class="headerlink" href="#le-programme-client" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
+
+
+<span class="k">def</span> <span class="nf">client_app</span><span class="p">():</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">()</span>  <span class="c1"># Puisque le serveur et le client logent sur la même machine</span>
+    <span class="n">port</span> <span class="o">=</span> <span class="mi">8000</span>  <span class="c1"># Port auquel est connecté le serveur</span>
+
+    <span class="n">client_socket</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">()</span>  <span class="c1"># Création du socket client</span>
+    <span class="n">client_socket</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>  <span class="c1"># connexion au serveur</span>
+
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot; -&gt; &quot;</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="n">message</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;au revoir&#39;</span><span class="p">:</span>
+        <span class="n">client_socket</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>  <span class="c1"># Envoyer un message</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">client_socket</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>  <span class="c1"># Recevoir une réponse</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Données envoyées par le serveur </span><span class="si">{0}</span><span class="s1">: &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> 
+
+        <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot; -&gt; &quot;</span><span class="p">)</span>
+
+    <span class="n">client_socket</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">if __name__ == &#39;__main__&#39;:</span>
+<span class="sd">    client_app()</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;\nif __name__ == &#39;__main__&#39;:\n    client_app()\n&quot;
+</pre></div>
+</div>
+</div>
+</div>
 <div class="docutils container" id="id2">
 <dl class="citation">
 <dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id1">SL17</a></span></dt>

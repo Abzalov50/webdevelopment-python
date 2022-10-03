@@ -1,3 +1,16 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+(chap1)=
+
 # Généralités sur la programmation web en Python
 
 ## Permettez-moi de vous introduire au Web
@@ -120,7 +133,7 @@ import socket
 
 def client_app():
     host = socket.gethostname()  # Puisque le serveur et le client logent sur la même machine
-    port = 5000  # Port auquel est connecté le serveur
+    port = 8000  # Port auquel est connecté le serveur
 
     client_socket = socket.socket()  # Création du socket client
     client_socket.connect((host, port))  # connexion au serveur
@@ -128,8 +141,8 @@ def client_app():
     message = input(" -> ")
 
     while message.lower().strip() != 'au revoir':
-        client_socket.send(message.encode())  # send message
-        data = client_socket.recv(1024).decode()  # receive response
+        client_socket.send(message.encode())  # Envoyer un message
+        data = client_socket.recv(1024).decode()  # Recevoir une réponse
 
         print('Données envoyées par le serveur {0}: '.format(data)) 
 
@@ -141,7 +154,6 @@ def client_app():
 if __name__ == '__main__':
     client_app()
 """
-
 ```
 
 ```{bibliography}
