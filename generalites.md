@@ -187,7 +187,7 @@ Il est également possible de rendre la page web dynamique côté client. On uti
 
 La {numref}`Figure %s <fig-arch-webapp>` (adaptée de [Source](https://litslink.com/blog/web-application-architecture)) présente un exemple d'architecture d'une application Web. On y voit clairement les 2 domaines de développement Web. L'utilisateur interagit avec la partie front-end à travers une application client, telle que le navigateur. Il fait sa requête via le navigateur et le navigateur transmet cette requête au serveur. Le serveur traite la requête et envoie une réponse (généralement une page web) au navigateur, qui l'affiche à l'utilisateur.
 
-```{figure} /_static/fig-arch-webapp.png
+```{figure} /_static/arch-webapp.png
 :name: fig-arch-webapp
 
 Une architecture d'application Web.

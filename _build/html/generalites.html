@@ -393,6 +393,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programmer-le-web">
+   Programmer le Web
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -443,6 +448,11 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programmer-le-web">
+   Programmer le Web
+  </a>
  </li>
 </ul>
 
@@ -516,7 +526,7 @@ Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un si
 </section>
 <section id="les-sockets-python">
 <span id="socks"></span><h2>Les sockets Python<a class="headerlink" href="#les-sockets-python" title="Permalink to this headline">#</a></h2>
-<p>Un socket est un point de terminaison d’un canal de communication bidirectionnel entre le serveur et le client. Dans cette section, nous apprenons à développer une petite application client-serveur, dont les différentes étapes sont les suivantes :</p>
+<p>Un socket est un point de terminaison d’un canal de communication bidirectionnel entre le serveur et le client. Dans cette section, nous apprenons à développer une petite application client-serveur, dont les différentes étapes sont les suivantes <a class="reference external" href="https://www.digitalocean.com/community/tutorials/python-socket-programming-server-client">Source</a> :</p>
 <ol class="simple">
 <li><p>Le serveur s’exécute et attend une connexion.</p></li>
 <li><p>Le client initie la communication, et envoie une requête.</p></li>
@@ -618,6 +628,26 @@ Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un si
 <ol class="simple">
 <li><p>Si les programmes s’exécutent correctement, le programme serveur doit être en attente d’une requête (message) de la part du client. Il faut donc écrire un message dans le programme client, et appuyer sur la touche <code class="docutils literal notranslate"><span class="pre">Entrée</span></code> du clavier pour l’envoyer. Ensuite, il faut basculer vers la console serveur pour voir la requête du client. Ensuite, écrire une réponse dans le programme serveur, et appuyer sur la touche <code class="docutils literal notranslate"><span class="pre">Entrée</span></code> pour l’envoyer au client. Et ainsi de suite, jusqu’à ce que vous décidiez de fermer les consoles pour arrêter les programmes, ou que vous envoyiez <code class="docutils literal notranslate"><span class="pre">Au</span> <span class="pre">revoir</span></code> comme message au serveur.</p></li>
 </ol>
+</section>
+</section>
+<section id="programmer-le-web">
+<h2>Programmer le Web<a class="headerlink" href="#programmer-le-web" title="Permalink to this headline">#</a></h2>
+<p>Le Web peut être défini comme une <em>collection de documents</em>, appelés <code class="docutils literal notranslate"><span class="pre">pages</span> <span class="pre">web</span></code>, logée sur des machines connectées via un réseau local ou via Internet. Programmer le Web, c’est donc <em>concevoir des pages web</em>.</p>
+<p>Une page web étant un document, elle a donc une <code class="docutils literal notranslate"><span class="pre">structure</span></code>, un <code class="docutils literal notranslate"><span class="pre">contenu</span></code>, et une <code class="docutils literal notranslate"><span class="pre">mise</span> <span class="pre">en</span> <span class="pre">forme</span></code>. Lorsque le contenu d’une page web reste inchangé peu importe la machine qu’on utilise, et les actions de l’utilisateur, on dit qu’elle est <em>statique</em>. En revanche, si elle conçue de sorte à s’adapter à son utilisateur et aux actions de celui-ci, et à d’autres évènements, on dit qu’elle est <em>dynamique</em>. Les applications Web sont majoritairement composées de pages web dynamiques.</p>
+<p>Dans l’activité de programmation Web, on fait la distinction entre la programmation (ou développement) <em>côté client</em>, càd de la page telle qu’elle est vue par l’utilisateur final, et la programmation <em>côté serveur</em>, càd du traitement (invisible par l’utilisateur) de la page avant qu’elle ne soit servie à l’utilisateur. Cette séparation a donné lieu à 2 types de développement Web :</p>
+<ul class="simple">
+<li><p>Le développement <em>front-end</em> : dont l’objet est de concevoir la structure et la mise en forme des pages. Les langages utilisés sont principalement le <strong>HTML</strong> (HyperText Markup Language) et le <strong>CSS</strong> (Cascading StyleSheet), respectivement.</p></li>
+<li><p>Le développement <em>back-end</em> : dont l’objet est de rendre la page dynamique, en y ajoutant du contenu dynamique en fonction des requêtes du client et d’autres informations relatives à la session de l’utilisateur. Plusieurs langages peuvent être utilisés, dont les plus populaires sont : <strong>Python</strong>, <strong>PHP</strong>, <strong>Javascript</strong> et <strong>Ruby</strong>.</p></li>
+</ul>
+<p>Il est également possible de rendre la page web dynamique côté client. On utilise pour cela le langage <strong>JavaScript</strong>.</p>
+<p>La <a class="reference internal" href="#fig-arch-webapp"><span class="std std-numref">Figure 3</span></a> (adaptée de <a class="reference external" href="https://litslink.com/blog/web-application-architecture">Source</a>) présente un exemple d’architecture d’une application Web. On y voit clairement les 2 domaines de développement Web. L’utilisateur interagit avec la partie front-end à travers une application client, telle que le navigateur. Il fait sa requête via le navigateur et le navigateur transmet cette requête au serveur. Le serveur traite la requête et envoie une réponse (généralement une page web) au navigateur, qui l’affiche à l’utilisateur.</p>
+<figure class="align-default" id="fig-arch-webapp">
+<img alt="_images/arch-webapp.png" src="_images/arch-webapp.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Une architecture d’application Web.</span><a class="headerlink" href="#fig-arch-webapp" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Ce cours traite du développement d’application Web avec Python. Nous verrons le développement front-end au Chapitre <a class="reference internal" href="html-css.html#chap-html-css"><span class="std std-ref">Introduction au développement front-end avec HTML &amp; CSS</span></a>, et le développement back-end aux Chapitres <a class="reference internal" href="intro-django.html#chap-intro-django"><span class="std std-ref">Rendre le Web dynamique grâce au développement côté serveur avec Django</span></a> et <a class="reference internal" href="postgresql.html#chap-postgresql"><span class="std std-ref">Introduction à PostgreSQL</span></a>.</p>
 <div class="docutils container" id="id2">
 <dl class="citation">
 <dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id1">SL17</a></span></dt>
@@ -625,7 +655,6 @@ Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un si
 </dd>
 </dl>
 </div>
-</section>
 </section>
 <div class="toctree-wrapper compound">
 </div>

@@ -72,7 +72,7 @@
 # 
 # ## Les sockets Python
 # 
-# Un socket est un point de terminaison d'un canal de communication bidirectionnel entre le serveur et le client. Dans cette section, nous apprenons à développer une petite application client-serveur, dont les différentes étapes sont les suivantes :
+# Un socket est un point de terminaison d'un canal de communication bidirectionnel entre le serveur et le client. Dans cette section, nous apprenons à développer une petite application client-serveur, dont les différentes étapes sont les suivantes [Source](https://www.digitalocean.com/community/tutorials/python-socket-programming-server-client) :
 # 
 # 1. Le serveur s'exécute et attend une connexion.
 # 2. Le client initie la communication, et envoie une requête.
@@ -167,6 +167,29 @@ def client_app():
 # Pour que ces commandes fonctionnent, il faut nécessairement que les consoles soient ouvertes dans les dossiers où se trouvent les fichiers `server_app.py` et `client_app.py`, ou se déplacer vers ces dossiers à l'aide de la commande `cd` (Voir comment utiliser cette commande [ici](https://www.youtube.com/watch?v=PbLqATBU4f0). Ce tutoriel peut être appliqué au cas de l'invite de commande Windows).
 # 
 # 3. Si les programmes s'exécutent correctement, le programme serveur doit être en attente d'une requête (message) de la part du client. Il faut donc écrire un message dans le programme client, et appuyer sur la touche `Entrée` du clavier pour l'envoyer. Ensuite, il faut basculer vers la console serveur pour voir la requête du client. Ensuite, écrire une réponse dans le programme serveur, et appuyer sur la touche `Entrée` pour l'envoyer au client. Et ainsi de suite, jusqu'à ce que vous décidiez de fermer les consoles pour arrêter les programmes, ou que vous envoyiez `Au revoir` comme message au serveur.
+# 
+# ## Programmer le Web
+# 
+# Le Web peut être défini comme une *collection de documents*, appelés `pages web`, logée sur des machines connectées via un réseau local ou via Internet. Programmer le Web, c'est donc *concevoir des pages web*.
+# 
+# Une page web étant un document, elle a donc une `structure`, un `contenu`, et une `mise en forme`. Lorsque le contenu d'une page web reste inchangé peu importe la machine qu'on utilise, et les actions de l'utilisateur, on dit qu'elle est *statique*. En revanche, si elle conçue de sorte à s'adapter à son utilisateur et aux actions de celui-ci, et à d'autres évènements, on dit qu'elle est *dynamique*. Les applications Web sont majoritairement composées de pages web dynamiques.
+# 
+# Dans l'activité de programmation Web, on fait la distinction entre la programmation (ou développement) *côté client*, càd de la page telle qu'elle est vue par l'utilisateur final, et la programmation *côté serveur*, càd du traitement (invisible par l'utilisateur) de la page avant qu'elle ne soit servie à l'utilisateur. Cette séparation a donné lieu à 2 types de développement Web :
+# 
+# - Le développement *front-end* : dont l'objet est de concevoir la structure et la mise en forme des pages. Les langages utilisés sont principalement le **HTML** (HyperText Markup Language) et le **CSS** (Cascading StyleSheet), respectivement.
+# - Le développement *back-end* : dont l'objet est de rendre la page dynamique, en y ajoutant du contenu dynamique en fonction des requêtes du client et d'autres informations relatives à la session de l'utilisateur. Plusieurs langages peuvent être utilisés, dont les plus populaires sont : **Python**, **PHP**, **Javascript** et **Ruby**.
+# 
+# Il est également possible de rendre la page web dynamique côté client. On utilise pour cela le langage **JavaScript**. 
+# 
+# La {numref}`Figure %s <fig-arch-webapp>` (adaptée de [Source](https://litslink.com/blog/web-application-architecture)) présente un exemple d'architecture d'une application Web. On y voit clairement les 2 domaines de développement Web. L'utilisateur interagit avec la partie front-end à travers une application client, telle que le navigateur. Il fait sa requête via le navigateur et le navigateur transmet cette requête au serveur. Le serveur traite la requête et envoie une réponse (généralement une page web) au navigateur, qui l'affiche à l'utilisateur.
+# 
+# ```{figure} /_static/arch-webapp.png
+# :name: fig-arch-webapp
+# 
+# Une architecture d'application Web.
+# ```
+# 
+# Ce cours traite du développement d'application Web avec Python. Nous verrons le développement front-end au Chapitre [](chap-html-css), et le développement back-end aux Chapitres [](chap-intro-django) et [](chap-postgresql).
 # 
 # ```{bibliography}
 # ```

@@ -1,5 +1,5 @@
 (undo-tree-save-format-version . 1)
-"1b1f572a31da9b76244bf166824247c7a9b8f564"
+"d23e6fceba56caa2e0b37db44bfeda853024a81f"
 [nil nil nil nil (25404 28146 201782 688000) 0 nil]
 ([nil nil ((12274 . 12276) (t 25402 38018 763022 719000)) nil (25404 28146 201782 131000) 0 nil])
 ([nil nil ((12276 . 12283)) nil (25404 28146 201781 771000) 0 nil])
@@ -466,5 +466,6 @@ nil
 ([nil nil ((nil invisible markdown-markup 15063 . 15064) (nil fontified nil 15063 . 15064) (nil mouse-face markdown-highlight-face 15062 . 15063) (nil keymap (keymap (mouse-2 . markdown-follow-thing-at-point) (follow-link . mouse-face)) 15062 . 15063) (nil invisible markdown-markup 15062 . 15063) (nil fontified nil 15062 . 15063) (nil mouse-face markdown-highlight-face 15046 . 15062) (nil keymap (keymap (mouse-2 . markdown-follow-thing-at-point) (follow-link . mouse-face)) 15046 . 15062) (nil invisible markdown-markup 15046 . 15062) (nil fontified nil 15046 . 15062) (nil invisible markdown-markup 15045 . 15046) (nil fontified nil 15045 . 15046) (nil invisible markdown-markup 15044 . 15045) (nil fontified nil 15044 . 15045) (nil invisible markdown-markup 15043 . 15044) (nil fontified nil 15043 . 15044) (15043 . 15064)) nil (25404 34001 807261 415000) 0 nil])
 ([nil nil ((#("chap-intro-django" 0 16 (fontified t keymap (keymap (mouse-2 . markdown-follow-thing-at-point) (follow-link . mouse-face)) invisible markdown-markup mouse-face markdown-highlight-face font-lock-multiline t face markdown-url-face) 16 17 (fontified t keymap (keymap (mouse-2 . markdown-follow-thing-at-point) (follow-link . mouse-face)) invisible markdown-markup mouse-face markdown-highlight-face font-lock-multiline t face markdown-url-face)) . -15046) (undo-tree-id123 . -17) (undo-tree-id124 . -17) (undo-tree-id125 . -17) (undo-tree-id126 . -17) 15063) nil (25404 34001 807260 282000) 0 nil])
 ([nil nil ((nil rear-nonsticky nil 15060 . 15061) (nil fontified nil 15046 . 15061) (15046 . 15061)) nil (25404 34001 807252 774000) 0 nil])
-([nil current ((15062 . 15063)) nil (25404 34001 807249 806000) 0 nil])
+([nil nil ((15062 . 15063)) nil (25404 34001 807249 806000) 0 nil])
+([nil current ((#("fig-" 0 4 (fontified t markdown-gfm-block-begin (14734 14774 14734 14737 14737 14738 14738 14745 14746 14774 14774 14774 #<buffer generalites.md>) invisible markdown-markup face (markdown-language-info-face markdown-code-face))) . -14755) (undo-tree-id302 . -4) (undo-tree-id303 . -4) (undo-tree-id304 . -4) (undo-tree-id305 . -4) 14759 (t 25404 34001 821027 191000)) nil (25404 34152 712369 551000) 0 nil])
 nil

@@ -783,7 +783,7 @@ else:
 
 
 # ### Les boucles
-# Une boucle permet de répéter l'exécution d'un code un certain nombre de fois.
+# Une `boucle` permet de répéter l'exécution d'un code un certain nombre de fois.
 
 # ### La boucle for
 # **Syntaxe**:
@@ -943,7 +943,7 @@ for i in range(5):
 
 
 # ## Les fonctions
-# Les fonctions Python sont un peu comme les fonctions mathématiques : *Elles ont un nom, prennent des paramètres (ou variables) entre parenthèses, et retournent une valeur*. Contrairement aux fonctions mathématiques, les fonctions Python peuvent ne pas prendre de paramètres, et ne pas retourner de valeurs.
+# Les `fonctions` Python sont un peu comme les fonctions mathématiques : *Elles ont un nom, prennent des paramètres (ou variables) entre parenthèses, et retournent une valeur*. Contrairement aux fonctions mathématiques, les fonctions Python peuvent ne pas prendre de paramètres, et ne pas retourner de valeurs.
 # 
 # Les fonctions constituent une structure très importante en programmation. Ce sont une **abstraction** des langages, en ce sens qu'elles permettent d'identifier un bloc de code par un nom, et utiliser ce nom autant de fois qu'on veut, et obtenir des résultats différents selon les paramètres qu'on passe à la fonction.
 # 
@@ -1098,6 +1098,7 @@ factorielle(100)
 
 
 # **La fonction combinaison de p dans n**
+# 
 # $$C_{n}^p = \frac{n!}{p!(n-p)!}$$
 
 # In[74]:
@@ -1132,9 +1133,12 @@ combinaison(3, 0)
 # Discriminant : $\Delta = b^2 - 4ac$
 # - Si $\Delta < 0$, $f(x)$ n'admet pas de racines.
 # - Si $\Delta > 0$, $f(x)$ admet deux racines distinctes :
+# 
 # $$x_1 = \frac{-b-\sqrt{\Delta}}{2a}$$
 # $$x_2 = \frac{-b+\sqrt{\Delta}}{2a}$$
+# 
 # - Si $\Delta = 0$, $f(x)$ admet une racine double :
+# 
 # $$x_0 = \frac{-b}{2a}$$
 
 # In[80]:
@@ -1250,7 +1254,7 @@ somme2(1, 2)
 # ## Le calcul scientifique
 
 # ### Le module numpy
-# **numpy** est un module qui permet de faire de l'algèbre linéaire (manipulation de matrices et des tables multidimensionnelles)
+# **Numpy** est un module qui permet de faire de l'algèbre linéaire (manipulation de `matrices` et des `tables multidimensionnelles`).
 
 # In[97]:
 
