@@ -1,5 +1,5 @@
 (undo-tree-save-format-version . 1)
-"ee875cdd5fd950b708d56d60ce48bbf7a236faac"
+"24e06fd567192c3db9d3b5264f7d07b5b251b0e9"
 [nil nil nil nil (25398 57401 492592 95000) 0 nil]
 ([nil nil (("intro" . -103) (undo-tree-id20 . -5) (undo-tree-id21 . -5) 108 (t 25398 51706 949940 587000)) nil (25398 57401 492590 747000) 0 nil])
 ([nil nil ((103 . 114)) nil (25398 57401 492589 210000) 0 nil])
@@ -22,5 +22,9 @@
 ([nil nil (("e" . -175) (undo-tree-id2 . -1) 176) nil (25398 57401 492572 24000) 0 nil])
 ([nil nil ((179 . 180)) nil (25398 57401 492570 929000) 0 nil])
 ([nil nil (("mymd" . -190) (undo-tree-id0 . -4) (undo-tree-id1 . -4) 194) nil (25398 57401 492570 41000) 0 nil])
-([nil current ((190 . 196)) nil (25398 57401 492556 657000) 0 nil])
+([nil nil ((190 . 196)) nil (25398 57401 492556 657000) 0 nil])
+([nil nil ((124 . 125) (t 25398 57401 503140 927000)) nil (25404 17211 471858 489000) 0 nil])
+([nil nil ((125 . 133)) nil (25404 17211 471858 67000) 0 nil])
+([nil nil ((133 . 210)) nil (25404 17211 471857 682000) 0 nil])
+([nil current (("/home/abzalov/Documents/Training/" . -133) (undo-tree-id0 . -33) (undo-tree-id1 . -33) (undo-tree-id2 . -33) (undo-tree-id3 . -33) 166) nil (25404 17211 471855 859000) 0 nil])
 nil

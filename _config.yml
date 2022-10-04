@@ -1,10 +1,17 @@
+#######################################################################################
 # Book settings
+#-------------------
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Développement Web avec Python
 author: Arnold N'GORAN, PhD
 logo: logo.png
 
+only_build_toc_files        : true
+
+#######################################################################################
+# Execution settings
+#--------------------
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
@@ -13,6 +20,9 @@ execute:
 # Interact link settings
 notebook_interface            : "notebook"
 
+#######################################################################################
+# LaTeX-specific settings
+#-------------------------
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
@@ -28,6 +38,10 @@ repository:
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
+
+#######################################################################################
+# HTML-specific settings
+#-------------------------
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:

@@ -1,3 +1,16 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+(chap1)=
+
 # Généralités sur la programmation web en Python
 
 ## Permettez-moi de vous introduire au Web
@@ -79,6 +92,7 @@ Un socket est un point de terminaison d'un canal de communication bidirectionnel
 ```{code-cell} ipython3
 import socket
 
+
 def server_app():
     host = socket.gethostname()  # Obtenir le nom d'hôte de la machine serveur
     port = 8000  # Brancher le serveur à un port supérieur à 1024
@@ -106,10 +120,9 @@ def server_app():
     
     conn.close()  # Fermer la connexion à l'arrêt de la boucle de traitement.
 
-"""
-if __name__ == '__main__':
-    server_app()
-"""
+
+#if __name__ == '__main__':
+#    server_app()
 ```
 
 ### Le programme client
@@ -120,7 +133,7 @@ import socket
 
 def client_app():
     host = socket.gethostname()  # Puisque le serveur et le client logent sur la même machine
-    port = 5000  # Port auquel est connecté le serveur
+    port = 8000  # Port auquel est connecté le serveur
 
     client_socket = socket.socket()  # Création du socket client
     client_socket.connect((host, port))  # connexion au serveur
@@ -128,8 +141,8 @@ def client_app():
     message = input(" -> ")
 
     while message.lower().strip() != 'au revoir':
-        client_socket.send(message.encode())  # send message
-        data = client_socket.recv(1024).decode()  # receive response
+        client_socket.send(message.encode())  # Envoyer un message
+        data = client_socket.recv(1024).decode()  # Recevoir une réponse
 
         print('Données envoyées par le serveur {0}: '.format(data)) 
 
@@ -137,12 +150,27 @@ def client_app():
 
     client_socket.close()
 
-"""
-if __name__ == '__main__':
-    client_app()
-"""
 
+#if __name__ == '__main__':
+#    client_app()
 ```
+
+Pour tester notre mini-application client-serveur, il faut procéder comme suit :
+
+1. Enregistrer le code du programme client et celui du programme serveur dans des fichiers Python (d'extension `.py`). Par exemple :
+
+- Fichier `server_app.py` pour le code du serveur.
+- Fichier `client_app.py` pour le code du serveur.
+
+Dans les 2 cas, les deux dernières lignes de code doivent être *dé-commentées* (càd qu'il faut retirer le symbole `#` placé en début de ligne).
+
+2. Exécuter **dans l'ordre** les 2 programmes dans 2 invites de commande Windows (ou consoles Linux) différentes, en exécutant les commandes suivantes :
+- `python server_app.py`
+- `python client_app.py`
+
+Pour que ces commandes fonctionnent, il faut nécessairement que les consoles soient ouvertes dans les dossiers où se trouvent les fichiers `server_app.py` et `client_app.py`, ou se déplacer vers ces dossiers à l'aide de la commande `cd` (Voir comment utiliser cette commande [ici](https://www.youtube.com/watch?v=PbLqATBU4f0). Ce tutoriel peut être appliqué au cas de l'invite de commande Windows).
+
+3. Si les programmes s'exécutent correctement, le programme serveur doit être en attente d'une requête (message) de la part du client. Il faut donc écrire un message dans le programme client, et appuyer sur la touche `Entrée` du clavier pour l'envoyer. Ensuite, il faut basculer vers la console serveur pour voir la requête du client. Ensuite, écrire une réponse dans le programme serveur, et appuyer sur la touche `Entrée` pour l'envoyer au client. Et ainsi de suite, jusqu'à ce que vous décidiez de fermer les consoles pour arrêter les programmes, ou que vous envoyiez `Au revoir` comme message au serveur.
 
 ```{bibliography}
 ```

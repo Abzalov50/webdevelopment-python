@@ -4,6 +4,7 @@
 format: jb-book
 root: generalites
 chapters:
+- file: Introduction à la programmation Python.ipynb
 - file: html-css
 - file: intro-django
 - file: postgresql
