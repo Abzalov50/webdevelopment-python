@@ -2075,7 +2075,7 @@ Les structures de contrôle de flux modifient cet état de fait.</p>
 </section>
 <section id="les-boucles">
 <h3>Les boucles<a class="headerlink" href="#les-boucles" title="Permalink to this headline">#</a></h3>
-<p>Une boucle permet de répéter l’exécution d’un code un certain nombre de fois.</p>
+<p>Une <code class="docutils literal notranslate"><span class="pre">boucle</span></code> permet de répéter l’exécution d’un code un certain nombre de fois.</p>
 </section>
 <section id="la-boucle-for">
 <h3>La boucle for<a class="headerlink" href="#la-boucle-for" title="Permalink to this headline">#</a></h3>
@@ -2385,7 +2385,7 @@ trois : 3
 </section>
 <section id="les-fonctions">
 <h2>Les fonctions<a class="headerlink" href="#les-fonctions" title="Permalink to this headline">#</a></h2>
-<p>Les fonctions Python sont un peu comme les fonctions mathématiques : <em>Elles ont un nom, prennent des paramètres (ou variables) entre parenthèses, et retournent une valeur</em>. Contrairement aux fonctions mathématiques, les fonctions Python peuvent ne pas prendre de paramètres, et ne pas retourner de valeurs.</p>
+<p>Les <code class="docutils literal notranslate"><span class="pre">fonctions</span></code> Python sont un peu comme les fonctions mathématiques : <em>Elles ont un nom, prennent des paramètres (ou variables) entre parenthèses, et retournent une valeur</em>. Contrairement aux fonctions mathématiques, les fonctions Python peuvent ne pas prendre de paramètres, et ne pas retourner de valeurs.</p>
 <p>Les fonctions constituent une structure très importante en programmation. Ce sont une <strong>abstraction</strong> des langages, en ce sens qu’elles permettent d’identifier un bloc de code par un nom, et utiliser ce nom autant de fois qu’on veut, et obtenir des résultats différents selon les paramètres qu’on passe à la fonction.</p>
 <p><strong>Syntaxe</strong>:</p>
 <p><strong>définition de la fonction:</strong></p>
@@ -2623,8 +2623,9 @@ $<span class="math notranslate nohighlight">\(n! = 1\times 2\times 3\times \cdot
 </div>
 </div>
 </div>
-<p><strong>La fonction combinaison de p dans n</strong>
-$<span class="math notranslate nohighlight">\(C_{n}^p = \frac{n!}{p!(n-p)!}\)</span>$</p>
+<p><strong>La fonction combinaison de p dans n</strong></p>
+<div class="math notranslate nohighlight">
+\[C_{n}^p = \frac{n!}{p!(n-p)!}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">combinaison</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
@@ -2675,12 +2676,17 @@ $<span class="math notranslate nohighlight">\(C_{n}^p = \frac{n!}{p!(n-p)!}\)</s
 <p>Discriminant : <span class="math notranslate nohighlight">\(\Delta = b^2 - 4ac\)</span></p>
 <ul class="simple">
 <li><p>Si <span class="math notranslate nohighlight">\(\Delta &lt; 0\)</span>, <span class="math notranslate nohighlight">\(f(x)\)</span> n’admet pas de racines.</p></li>
-<li><p>Si <span class="math notranslate nohighlight">\(\Delta &gt; 0\)</span>, <span class="math notranslate nohighlight">\(f(x)\)</span> admet deux racines distinctes :
-$<span class="math notranslate nohighlight">\(x_1 = \frac{-b-\sqrt{\Delta}}{2a}\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(x_2 = \frac{-b+\sqrt{\Delta}}{2a}\)</span>$</p></li>
-<li><p>Si <span class="math notranslate nohighlight">\(\Delta = 0\)</span>, <span class="math notranslate nohighlight">\(f(x)\)</span> admet une racine double :
-$<span class="math notranslate nohighlight">\(x_0 = \frac{-b}{2a}\)</span>$</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(\Delta &gt; 0\)</span>, <span class="math notranslate nohighlight">\(f(x)\)</span> admet deux racines distinctes :</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[x_1 = \frac{-b-\sqrt{\Delta}}{2a}\]</div>
+<div class="math notranslate nohighlight">
+\[x_2 = \frac{-b+\sqrt{\Delta}}{2a}\]</div>
+<ul class="simple">
+<li><p>Si <span class="math notranslate nohighlight">\(\Delta = 0\)</span>, <span class="math notranslate nohighlight">\(f(x)\)</span> admet une racine double :</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[x_0 = \frac{-b}{2a}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">racines2nddegre</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
@@ -2866,7 +2872,7 @@ x_0 = 0.75
 <h2>Le calcul scientifique<a class="headerlink" href="#le-calcul-scientifique" title="Permalink to this headline">#</a></h2>
 <section id="le-module-numpy">
 <h3>Le module numpy<a class="headerlink" href="#le-module-numpy" title="Permalink to this headline">#</a></h3>
-<p><strong>numpy</strong> est un module qui permet de faire de l’algèbre linéaire (manipulation de matrices et des tables multidimensionnelles)</p>
+<p><strong>Numpy</strong> est un module qui permet de faire de l’algèbre linéaire (manipulation de <code class="docutils literal notranslate"><span class="pre">matrices</span></code> et des <code class="docutils literal notranslate"><span class="pre">tables</span> <span class="pre">multidimensionnelles</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># pip install numpy</span>
