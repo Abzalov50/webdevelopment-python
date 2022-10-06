@@ -557,8 +557,7 @@ Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un si
     
     <span class="n">serv_socket</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Spécifier le nombre de requêtes simultanées que le serveur peut traiter</span>
     <span class="n">conn</span><span class="p">,</span> <span class="n">address</span> <span class="o">=</span> <span class="n">serv_socket</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>  <span class="c1"># Le serveur est prêt à accepter une connexion</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;#### Aide :&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pour arrêter le serveur, appuyer la touche Entrée sans saisir de texte, ou entrer &quot;Au revoir&quot; sans les guillemets.&#39;</span><span class="p">)</span>
+
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;####</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Connexion depuis l</span><span class="se">\&#39;</span><span class="s1">adresse : </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">address</span><span class="p">))</span>
     
@@ -566,10 +565,10 @@ Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un si
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">req</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>  <span class="c1"># Requête limitée à 1024 octets</span>
         
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">req</span><span class="p">:</span>
             <span class="c1"># Si aucune donnée, arrêter le serveur</span>
             <span class="k">break</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Données reçues de l&#39;utilisateur connecté : </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Données reçues de l&#39;</span><span class="n">utilisateur</span> <span class="n">connecté</span> <span class="p">:</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="s1">&#39;.format(req))</span>
         <span class="n">data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39; &gt;&gt; &#39;</span><span class="p">)</span>
         <span class="n">conn</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span> <span class="c1"># Envoyer une réponse au client</span>
     
@@ -578,6 +577,14 @@ Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un si
 
 <span class="c1">#if __name__ == &#39;__main__&#39;:</span>
 <span class="c1">#    server_app()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Données reçues de l&#39;</span><span class="n">utilisateur</span> <span class="n">connecté</span> <span class="p">:</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="s1">&#39;.format(req))</span>
+                                                           <span class="o">^</span>
+<span class="ne">SyntaxError</span>: unterminated string literal (detected at line 24)
 </pre></div>
 </div>
 </div>
@@ -603,7 +610,7 @@ Dans la pratique, <em>si vous voulez accéder à une ressource sur le Web (un si
         <span class="n">client_socket</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>  <span class="c1"># Envoyer un message</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">client_socket</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>  <span class="c1"># Recevoir une réponse</span>
 
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Données envoyées par le serveur </span><span class="si">{0}</span><span class="s1">: &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Données envoyées par le serveur: &quot;</span><span class="si">{0}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> 
 
         <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot; -&gt; &quot;</span><span class="p">)</span>
 

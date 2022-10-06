@@ -102,8 +102,7 @@ def server_app():
     
     serv_socket.listen(2)  # Spécifier le nombre de requêtes simultanées que le serveur peut traiter
     conn, address = serv_socket.accept()  # Le serveur est prêt à accepter une connexion
-    print('#### Aide :')
-    print('Pour arrêter le serveur, appuyer la touche Entrée sans saisir de texte, ou entrer "Au revoir" sans les guillemets.')
+
     print('####\n\n')
     print('Connexion depuis l\'adresse : {0}'.format(address))
     
@@ -111,10 +110,10 @@ def server_app():
     while True:
         req = conn.recv(1024).decode()  # Requête limitée à 1024 octets
         
-        if not data:
+        if not req:
             # Si aucune donnée, arrêter le serveur
             break
-        print("Données reçues de l'utilisateur connecté : {0}".format(data))
+        print('Données reçues de l'utilisateur connecté : "{0}"'.format(req))
         data = input(' >> ')
         conn.send(data.encode()) # Envoyer une réponse au client
     
@@ -144,7 +143,7 @@ def client_app():
         client_socket.send(message.encode())  # Envoyer un message
         data = client_socket.recv(1024).decode()  # Recevoir une réponse
 
-        print('Données envoyées par le serveur {0}: '.format(data)) 
+        print('Données envoyées par le serveur: "{0}"'.format(data)) 
 
         message = input(" -> ")
 

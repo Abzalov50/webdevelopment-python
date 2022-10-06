@@ -1,15 +1,4 @@
 Traceback (most recent call last):
-  File "/home/abzalov/.local/lib/python3.10/site-packages/nbclient/client.py", line 730, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-  File "/home/abzalov/.local/lib/python3.10/site-packages/nbclient/util.py", line 96, in ensure_async
-    result = await obj
-  File "/home/abzalov/.local/lib/python3.10/site-packages/jupyter_client/channels.py", line 230, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "/home/abzalov/.local/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
     executenb(
   File "/home/abzalov/.local/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
@@ -22,18 +11,50 @@ Traceback (most recent call last):
     return future.result()
   File "/home/abzalov/.local/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
     await self.async_execute_cell(
-  File "/home/abzalov/.local/lib/python3.10/site-packages/nbclient/client.py", line 949, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-  File "/home/abzalov/.local/lib/python3.10/site-packages/nbclient/client.py", line 754, in _async_poll_for_reply
-    await self._async_handle_timeout(timeout, cell)
-  File "/home/abzalov/.local/lib/python3.10/site-packages/nbclient/client.py", line 801, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-['import socket', '', '', 'def server_app():', "    host = socket.gethostname()  # Obtenir le nom d'hôte de la machine serveur"]
-...
-["    conn.close()  # Fermer la connexion à l'arrêt de la boucle de traitement.", '', '', "if __name__ == '__main__':", '    server_app()']
--------------------
+  File "/home/abzalov/.local/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/abzalov/.local/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import socket
+
+
+def server_app():
+    host = socket.gethostname()  # Obtenir le nom d'hôte de la machine serveur
+    port = 8000  # Brancher le serveur à un port supérieur à 1024
+    
+    serv_socket = socket.socket()  # Créer un objet `socket'
+    serv_socket.bind( (host, port) )  # Associer l'objet au socket
+    
+    serv_socket.listen(2)  # Spécifier le nombre de requêtes simultanées que le serveur peut traiter
+    conn, address = serv_socket.accept()  # Le serveur est prêt à accepter une connexion
+
+    print('####\n\n')
+    print('Connexion depuis l\'adresse : {0}'.format(address))
+    
+    # Lancer la boucle de traitement des requêtes
+    while True:
+        req = conn.recv(1024).decode()  # Requête limitée à 1024 octets
+        
+        if not req:
+            # Si aucune donnée, arrêter le serveur
+            break
+        print('Données reçues de l'utilisateur connecté : "{0}"'.format(req))
+        data = input(' >> ')
+        conn.send(data.encode()) # Envoyer une réponse au client
+    
+    conn.close()  # Fermer la connexion à l'arrêt de la boucle de traitement.
+
+
+#if __name__ == '__main__':
+#    server_app()
+------------------
+
+[0;36m  Input [0;32mIn [1][0;36m[0m
+[0;31m    print('Données reçues de l'utilisateur connecté : "{0}"'.format(req))[0m
+[0m                                                           ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m unterminated string literal (detected at line 24)
+
+SyntaxError: unterminated string literal (detected at line 24) (477305930.py, line 24)
 
